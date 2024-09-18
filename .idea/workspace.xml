@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="390efcf2-d2e1-4386-809e-e1e623dde61e" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Circuitos/package.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Circuitos/package.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/Pruebas.sc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/Pruebas.sc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +92,7 @@
       <workItem from="1726258971398" duration="38290000" />
       <workItem from="1726553327927" duration="731000" />
       <workItem from="1726554077946" duration="259000" />
-      <workItem from="1726677060680" duration="2396000" />
+      <workItem from="1726677060680" duration="4159000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />

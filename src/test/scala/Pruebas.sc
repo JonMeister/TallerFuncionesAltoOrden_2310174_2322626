@@ -26,11 +26,18 @@ chip_or(List(1,1))
 
 // Pruebas para half_adder : Chip
 
+half_adder(List(0,0))
+half_adder(List(0,1))
+half_adder(List(1,0))
 half_adder(List(1,1))
 
 // Pruebas para full_adder : Chip
 
 full_adder(List(1,1,0))
+full_adder(List(1,1,1))
+full_adder(List(0,1,0))
+full_adder(List(0,1,1))
+full_adder(List(1,0,1))
 
 // Pruebas para adder(n : Int) : Chip
 
@@ -39,17 +46,17 @@ val add_2=adder(2)
 val add_3=adder(3)
 val add_4=adder(4)
 
-add_1(List(1)++List(1))//Works
-add_1(List(0)++List(0))//Works
-add_1(List(1)++List(0))//Works
-add_1(List(0)++List(1))//Works
+add_1(List(1)++List(1))
+add_1(List(0)++List(0))
+add_1(List(1)++List(0))
+add_1(List(0)++List(1))
 
 
-add_2(List(1,0)++List(0,1))//Works
-add_2(List(1,1)++List(0,1))//Doesn't work, something's wrong :(
+add_2(List(1,0)++List(0,1))
+add_2(List(1,1)++List(0,1))
 
-add_3(List(1,0,1)++List(0,0,0))//Works
-add_3(List(1,0,1)++List(1,0,1))//Works
+add_3(List(1,0,1)++List(0,0,0))
+add_3(List(1,0,1)++List(1,0,1))
 
 add_4(List(1,0,1,1)++List(1,0,1,0))//Doesn't work, I gave up :'(
 
