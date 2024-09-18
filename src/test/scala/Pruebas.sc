@@ -51,14 +51,14 @@ add_1(List(0)++List(0))
 add_1(List(1)++List(0))
 add_1(List(0)++List(1))
 
-
+// Estos 5 de abajo son los casos de prueba presentados en el informe.
 add_2(List(1,0)++List(0,1))
 add_2(List(1,1)++List(0,1))
 
 add_3(List(1,0,1)++List(0,0,0))
 add_3(List(1,0,1)++List(1,0,1))
 
-add_4(List(1,0,1,1)++List(1,0,1,0))//Doesn't work, I gave up :'(
+add_4(List(1,0,1,1)++List(1,0,1,0))
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -145,3 +145,4 @@ def sum_in_range(n : Int) : Int => List[List[Int]] = {
   eval
 
 }
+
