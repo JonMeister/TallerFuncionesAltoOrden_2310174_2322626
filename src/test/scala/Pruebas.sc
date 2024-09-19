@@ -70,6 +70,7 @@ add_4(List(1,0,1,1)++List(1,0,1,0))//Doesn't work, I gave up :'(
 //bin : Cantidad de bits ; n : número a transformar
 def toBinary(bin : Int, n: Int): List[Int] = {
   if (n < 0) throw new Error("El número debe ser entero positivo")
+  else if (n >= math.pow(2,bin).toInt) throw new Error("El número debe poder transformarse con bin bits")
 
   def convert(binaryParameter : Int, n: Int, li: List[Int]): List[Int] = {
     if (binaryParameter == 0) {li}
@@ -111,14 +112,24 @@ def generate_allCombinations_of_n_bits(n : Int) : List[List[Int]] = {
 // una función. sum_in_range toma o recibe una entero positivo n, y calcula todas las posibles,
 // combinaciones de bits de n longitud, y retorna una función la cual recibe un número entero,
 // positivo number, que se pueda escribir con la cantidad n de bits y retorna una matriz de
-// tamañno (2^n,n), donde cada sublista es la suma de ese entero positivo number a
+// tamañno (2^n,n), donde cada sublista es la suma de ese entero positivo number a (se recibe
+// una lista de tamaño 1 o con el valor del entero postivo a sumar)
 // cada sublista de la matriz con todas las posibles combinaciones de n bits.
 
-// Por ejemplo sum_in_range(2)(0), transformara 0 a un numero binario de 2 bits y, lo sumara
+// Además la función le permite controlar el uso de si misma, en cuyo caso que quiera poner el
+// número number directamente en binario (lista de 1,0), entonces debe ajustar binaryOrInt = true,
+// en caso de que lo quiera en entero, debe ajustar binaryOrInt = false
+
+// Por ejemplo sum_in_range(2,false)(List(0)), transformara 0 a un numero binario de 2 bits y, lo sumara
 // a cada binario de la lista List(List(0,0),List(0,1),List(1,0),List(1,1)), lo cual dará:
 // List(List(0,1,1),List(0,1,0),List(0,0,1),List(0,0,0)) -> Lista ordenada descendentemente
 
-def sum_in_range(n : Int) : Int => List[List[Int]] = {
+// Otro ejemplo sum_in_range(2,true)(List(0,0)) será
+// List(List(0,1,1),List(0,1,0),List(0,0,1),List(0,0,0))
+
+
+
+def sum_in_range(n : Int,binaryOrInt : Boolean) : List[Int] => List[List[Int]] = {
 
   def sumAux(number : List[Int], bits_of_n_length : List[List[Int]],
              actual : Int, result : List[List[Int]]) : List[List[Int]] = {
@@ -133,15 +144,36 @@ def sum_in_range(n : Int) : Int => List[List[Int]] = {
 
   }
 
-  def eval(number : Int) : List[List[Int]] = {
+  def tamList(li : List[Int], counter : Int) : Int = {
 
-    if (number >= math.pow(2, n)) throw new Error("Number overflow")
+    if (li.isEmpty) counter
+    else tamList(li.tail,counter + 1)
+
+  }
+
+  def evalInt(number : List[Int]) : List[List[Int]] = {
+
+    if (number.head >= math.pow(2, n)) throw new Error("Number overflow")
     else {
-      sumAux(toBinary(n,number),generate_allCombinations_of_n_bits(n),0,List())
+      sumAux(toBinary(n,number.head),generate_allCombinations_of_n_bits(n),0,List())
     }
 
   }
 
-  eval
+  def evalBinary(number: List[Int]): List[List[Int]] = {
+
+    if (tamList(number, 0) > n) throw new Error("Number overflow")
+    else {
+      sumAux(number, generate_allCombinations_of_n_bits(n), 0, List())
+    }
+
+  }
+
+  if (binaryOrInt){
+    evalBinary
+  }
+  else {
+    evalInt
+  }
 
 }
