@@ -3,12 +3,12 @@ package object Circuitos {
   type Chip=List[Int]=>List[Int]
 
   def crearChipUnario (funcion:Int=>Int): Chip={
-    (input : List[Int])=>List(funcion(input.head));
+    input=>List(funcion(input.head));
   }
 
 
   def crearChipBinario (funcion:(Int,Int)=>Int): Chip={
-    (input : List[Int])=>List(funcion(input.head,input.tail.head));
+    input=>List(funcion(input.head,input.tail.head));
   }
 
   val chip_not: Chip = crearChipUnario((x: Int) => (1 - x))
@@ -19,7 +19,7 @@ package object Circuitos {
 
   def half_adder: Chip = {
     // let input as List[Int] -> length 2
-    (input : List[Int]) =>
+    input =>
       val A = input.head
       val B = input.tail.head
 

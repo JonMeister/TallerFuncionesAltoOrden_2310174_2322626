@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="390efcf2-d2e1-4386-809e-e1e623dde61e" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Circuitos/package.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Circuitos/package.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
