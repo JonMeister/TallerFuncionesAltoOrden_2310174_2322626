@@ -45,12 +45,12 @@ val add_1=adder(1)
 val add_2=adder(2)
 val add_3=adder(3)
 val add_4=adder(4)
-
+/*
 add_1(List(1)++List(1))
 add_1(List(0)++List(0))
 add_1(List(1)++List(0))
 add_1(List(0)++List(1))
-
+*/
 // Estos 5 de abajo son los casos de prueba presentados en el informe.
 add_2(List(1,0)++List(0,1))
 add_2(List(1,1)++List(0,1))
@@ -60,8 +60,12 @@ add_3(List(1,0,1)++List(1,0,1))
 
 add_4(List(1,0,1,1)++List(1,0,1,0))
 
-///////////////////////////////////////////////////////////////////////////////////////////
 
+
+/*
+* FIN DE LOS CASOS DE PRUEBA
+* /////////////////////////////////////////////////////////////////////////////////////////////
+* */
 // Se da la posibilidad de optimizar las pruebas del adder usando el siguiente código :
 
 // Esta función retorna la transformación de un número entero positivo a binario en n bits,
